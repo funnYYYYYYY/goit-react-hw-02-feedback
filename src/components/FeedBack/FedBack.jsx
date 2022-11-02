@@ -40,7 +40,7 @@ class FedBack extends Component {
             onLeaveFeedback={this.countFeedback}
           />
         </Section>
-        <Section title="">
+        <Section title="Statistics">
           {this.countTotalFeedback() ? (
             <Statistics
               good={this.state.good}

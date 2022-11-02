@@ -2,7 +2,6 @@ import { Response, Title } from 'components/FeedBack/FedBack.styled';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
   <div>
-    <Title>Statistics</Title>
     <Response>Good: {good}</Response>
     <Response>Neutral: {neutral}</Response>
     <Response>Bad: {bad}</Response>
