@@ -1,4 +1,4 @@
-import { Response, Title } from 'components/FeedBack/FedBack.styled';
+import { Response } from 'components/FeedBack/FedBack.styled';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
   <div>
