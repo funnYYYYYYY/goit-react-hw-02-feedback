@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Title, Box } from './FedBack.styled';
+import { Box } from './FedBack.styled';
 import { Statistics } from '../Statistics/Statistics';
 import { FeedbackOptions } from 'components/FeedbackOptions/FeedbackOptions ';
-import { Notification } from './Notification/Notification';
+import { Notification } from '../Notification/Notification';
+import { Section } from 'components/Section/Section';
 
 class FedBack extends Component {
   state = {
@@ -33,26 +34,29 @@ class FedBack extends Component {
   render() {
     return (
       <Box>
-        <Title>Please leave FedBack</Title>
-        <FeedbackOptions
-          options={Object.keys(this.state)}
-          onLeaveFeedback={this.countFeedback}
-        />
-        {this.countTotalFeedback() ? (
-          <Statistics
-            good={this.state.good}
-            neutral={this.state.neutral}
-            bad={this.state.bad}
-            total={this.countTotalFeedback()}
-            positivePercentage={
-              this.countPositiveFeedbackPercentage() || 0
-                ? this.countPositiveFeedbackPercentage()
-                : 0
-            }
-          ></Statistics>
-        ) : (
-          <Notification message="There is no feedback"></Notification>
-        )}
+        <Section title="Please leave FedBack">
+          <FeedbackOptions
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.countFeedback}
+          />
+        </Section>
+        <Section title="">
+          {this.countTotalFeedback() ? (
+            <Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={this.countTotalFeedback()}
+              positivePercentage={
+                this.countPositiveFeedbackPercentage() || 0
+                  ? this.countPositiveFeedbackPercentage()
+                  : 0
+              }
+            ></Statistics>
+          ) : (
+            <Notification message="There is no feedback"></Notification>
+          )}
+        </Section>
       </Box>
     );
   }
