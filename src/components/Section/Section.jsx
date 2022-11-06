@@ -1,4 +1,5 @@
 import { Title } from 'components/FeedBack/FedBack.styled';
+import PropTypes from 'prop-types';
 
 export const Section = ({ title, children }) => {
   return (
@@ -7,4 +8,9 @@ export const Section = ({ title, children }) => {
       <div>{children}</div>
     </>
   );
+};
+
+Section.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node,
 };
